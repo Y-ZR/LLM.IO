@@ -95,8 +95,7 @@ export default function Conversation() {
                           weight={500}
                           size="lg"
                           component={Link}
-                          href={`/conversations/${conversation.id}`}
-                          style={{ textDecoration: "none" }}
+                          href={`/conversations/${conversation._id}`}
                         >
                           {conversation.name}
                         </Text>

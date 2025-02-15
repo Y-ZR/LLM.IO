@@ -71,7 +71,7 @@ async def create_prompt(id: UUID4, prompt: Prompt):
 
     try:
         # send prompt to LLM model
-        response = "response from LLM"
+        response = "[Response from LLM.]"
         # append LLM response to conversation.messages
         llm_response = Prompt(
             role=QueryRoleType.ASSISTANT, content=response)

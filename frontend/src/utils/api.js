@@ -36,9 +36,6 @@ export const deleteConversation = async (id) => {
 
 // Send a new prompt to a conversation
 export const sendPrompt = async ({ conversationId, promptData }) => {
-  const { data } = await api.post(`/queries`, {
-    conversation_id: conversationId,
-    ...promptData,
-  });
+  const { data } = await api.post(`/queries?id=${conversationId}`, promptData);
   return data;
 };
