@@ -37,9 +37,6 @@ class Conversation(Document):
     tokens: conint(ge=0) = Field(...,
                                  description="Total number of tokens consumed in this entire Chat (Format: int32)", readOnly=True)
 
-    class Settings:
-        collection = "conversations"
-
 
 class ConversationFull(Conversation):
     """
@@ -47,6 +44,9 @@ class ConversationFull(Conversation):
     """
     messages: List[Prompt] = Field(...,
                                    description="Chat messages to be included")
+
+    class Settings:
+        collection = "conversations"
 
 
 class ConversationPOST(BaseModel):
