@@ -1,17 +1,30 @@
 "use client";
 
-import {
-  Button,
-  Container,
-  Group,
-  Text,
-  Title,
-  Image,
-  Grid,
-} from "@mantine/core";
+import { Button, Container, Group, Text, Title, Grid } from "@mantine/core";
 import Link from "next/link";
+import { TypingAnimation } from "../components/typing-animations";
 
 export default function Home() {
+  const prompts = [
+    "Explain the theory of relativity in simple terms.",
+    "What are the implications of artificial general intelligence?",
+    "How does photosynthesis work at a molecular level?",
+    "Explain the concept of blockchain and cryptocurrency.",
+    "What causes black holes and how do they work?",
+    "How does the human immune system fight disease?",
+    "What is dark matter and why is it important?",
+    "Explain how neural networks learn and evolve.",
+    "How do quantum computers differ from classical computers?",
+    "What are the leading theories about consciousness?",
+    "How does genetic engineering and CRISPR work?",
+    "What causes climate change and its global effects?",
+    "How do vaccines train our immune system?",
+    "Explain string theory and its significance.",
+    "How do self-driving cars perceive their environment?",
+    "What is the future of space exploration?",
+    "How does the internet actually work?",
+  ];
+
   return (
     <Container
       size="lg"
@@ -46,12 +59,14 @@ export default function Home() {
           </Group>
         </Grid.Col>
         <Grid.Col span={6}>
-          <Image
-            src="/globe.svg"
-            alt="LLM.IO"
-            radius="md"
-            style={{ maxWidth: "100%" }}
-          />
+          <div
+            className="flex flex-col justify-center w-full h-full lg:max-w-xl mx-auto overflow-hidden rounded-xl bg-black p-8"
+            style={{ height: "320px" }}
+          >
+            <div className="text-white min-h-full flex items-center">
+              <TypingAnimation prompts={prompts} />
+            </div>
+          </div>
         </Grid.Col>
       </Grid>
     </Container>
