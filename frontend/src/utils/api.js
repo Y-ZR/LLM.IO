@@ -17,8 +17,8 @@ export const fetchConversationById = async (id) => {
 };
 
 // Create a new conversation
-export const createConversation = async (conversationData) => {
-  const { data } = await api.post("/conversations/", conversationData);
+export const createConversation = async ({ name, model, params }) => {
+  const { data } = await api.post("/conversations", { name, model, params });
   return data;
 };
 
